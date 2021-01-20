@@ -12,6 +12,5 @@ var (
 
 func StartApplication() {
 	mapUrls()
-	//mapSocketUrls()
-	router.Run(":8080")
+	mapSocketUrls()
 }
