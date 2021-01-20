@@ -5,8 +5,7 @@ Simple Go Matching service.
 My initial idea was to create this using web sockets, as I think it's the right way to go. Having said that, I didn't have the biggest experience with sockets in golang,
 only used them a few times in Node.js applications.
 
-So there are actually 2 versions of this. REST and socket. Both can't work at the same time so if you want to try out socket version, comment out `mapUrls` in `application.go` and uncomment `mapSocketUrls`. Socket version runs on port 8000 and there is a `index.html` that will help you see data is being sent with sockets.
-Again, not a socket expert so bear with me.
+So there are actually 2 versions of this. REST and socket. Both can work at the same time but they run at different ports. REST is running on 8080 and sockets are on 8000. But the data is shared so if you put a player in a game inside rest, it will be shown on the socket part as well.
 
 One more important thing to note is that I created this all several hours, because the task said it should not take longer. So because of that, I didn't want to lose much time creating databases and storing games there, dockerizing, etc. I used 2 maps, one for games and one for users and they are being filled as long as the app is running. Database would not change much, would just take much longer to setup, so I decided not to bother with that. Also there was some optimization to be done, with for example `getCurrentGame` function that loops through all, and finds the first that is not filled up. Due to limit of users being 100 (so games being limited to 25), there was no harm done with one for loop. If the number would get much bigger, keeping track of id of current game being filled would be my first optimization. 
 
