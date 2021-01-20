@@ -1,6 +1,6 @@
 package main
 
-import "github.com/fvukojevic/bookstore_users-api/app"
+import "github.com/fvukojevic/matchingservice/app"
 
 func main() {
 	app.StartApplication()
