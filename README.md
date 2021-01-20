@@ -3,7 +3,7 @@
 Simple Go Matching service. 
 
 My initial idea was to create this using web sockets, as I think it's the right way to go. Having said that, I didn't have the biggest experience with sockets in golang,
-only used them a few times in Node.js applications.
+only used them a few times in Node.js applications. My idea with the sockets was as simple as: Once a player joins a game, I notify all players (clients) that a new player joined and in game with specific id(and then we can see if we start a game, or wait for more players)). I feel like this is how it normally works with matchmaking, but again, not a socket expert and I definitely didn't show my full potential there. Hope I showed enough. Anyways, I have a strong feeling that once shown a correct way of doing this, I would not forget it.
 
 So there are actually 2 versions of this. REST and socket. Both can work at the same time but they run at different ports. REST is running on 8080 and sockets are on 8000. But the data is shared so if you put a player in a game inside rest, it will be shown on the socket part as well.
 
